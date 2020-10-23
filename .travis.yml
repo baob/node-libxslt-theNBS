@@ -9,11 +9,11 @@ node_js:
   - "14"
   - "15"
 env:
-  - CXX=g++-4.8
+  - CXX=g++-9.3
 
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+      - g++-9.3
