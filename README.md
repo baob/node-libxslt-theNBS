@@ -1,7 +1,7 @@
 node-libxslt
 ============
 
-[![Build status](https://travis-ci.org/theNBS/node-libxslt.svg?branch=master)](https://travis-ci.org/theNBS/node-libxslt)
+[![Build Status](https://www.travis-ci.com/theNBS/node-libxslt.svg?branch=master)](https://www.travis-ci.com/theNBS/node-libxslt)
 
 Node.js bindings for [libxslt](http://xmlsoft.org/libxslt/) compatible with [libxmljs2](https://github.com/marudor/libxmljs2).
 
