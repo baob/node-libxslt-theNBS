@@ -1,21 +1,21 @@
 node-libxslt
 ============
 
-[![Build status](https://travis-ci.org/theNBS/node-libxslt.svg?branch=master)](https://travis-ci.org/theNBS/node-libxslt)
+[![Build Status](https://www.travis-ci.com/theNBS/node-libxslt.svg?branch=master)](https://www.travis-ci.com/theNBS/node-libxslt)
 
-Node.js bindings for [libxslt](http://xmlsoft.org/libxslt/) compatible with [libxmljs](https://github.com/libxmljs/libxmljs).
+Node.js bindings for [libxslt](http://xmlsoft.org/libxslt/) compatible with [libxmljs2](https://github.com/marudor/libxmljs2).
 
-This fork restores the dependency of node-libxslt on [libxmljs](https://github.com/libxmljs/libxmljs) rather than
+This fork restores the dependency of node-libxslt on [libxmljs2](https://github.com/marudor/libxmljs2) rather than
 the Multi Threaded fork ([libxmljs-mt](https://github.com/gagern/libxmljs)). This was for a couple of reasons:
 
-1. libxmljs-mt appears to no longer be manintaned, wereas libxmljs is - as such it compiles with Node.js 8 -> v14.
+1. libxmljs-mt appears to no longer be manintaned, wereas libxmljs is - as such it compiles with Node.js 10 -> 15.
 2. In our usage of the library - we don't need any of the async operations
 3. We don't have very complex XSLT stylesheets - and none that include other XSLT's
 
 This fork keeps the callback implementation of `parse` and `apply` but both have been refactored to call the
 synchronous libxmljs methods.
 
-The fork should compile successfully on Node 8 -> 14.
+The fork should compile successfully on Node 10 -> 15.
 
 Installation
 ------------
@@ -33,7 +33,7 @@ Basic usage
 -----------
 
 ```js
-var libxslt = require('libxslt');
+var libxslt = require('libxslt2');
 
 libxslt.parse(stylesheetString, function(err, stylesheet){
   var params = {
@@ -51,9 +51,9 @@ libxslt.parse(stylesheetString, function(err, stylesheet){
 Libxmljs integration
 --------------------
 
-Node-libxslt depends on [libxmljs](https://github.com/libxmljs/libxmljs) in the same way that [libxslt](http://xmlsoft.org/libxslt/) depends on [libxml](http://xmlsoft.org/). This dependancy makes possible to bundle and to load in memory libxml only once for users of both libraries.
+Node-libxslt depends on [libxmljs2](https://github.com/marudor/libxmljs2) in the same way that [libxslt](http://xmlsoft.org/libxslt/) depends on [libxml](http://xmlsoft.org/). This dependancy makes possible to bundle and to load in memory libxml only once for users of both libraries.
 
-The libxmljs module required by node-libxslt is exposed as ```require('libxslt').libxmljs```. This prevents depending on libxmljs twice which is not optimal and source of weird bugs.
+The libxmljs module required by node-libxslt is exposed as ```require('libxslt').libxmljs```. This prevents depending on libxmljs2 twice which is not optimal and source of weird bugs.
 
 It is possible to work with libxmljs documents instead of strings:
 

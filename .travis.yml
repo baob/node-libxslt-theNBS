@@ -1,18 +1,18 @@
+dist: bionic
+os: linux
 language: node_js
 node_js:
-  - "8"
   - "10"
   - "12"
   - "13"
   - "14"
+  - "15"
 env:
-  - CXX=g++-4.8
+  - CXX=g++-9
 
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
-
-sudo: false
+      - g++-9
