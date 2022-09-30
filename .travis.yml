@@ -10,11 +10,11 @@ node_js:
   - "16"
   - "18"
 env:
-  - CXX=g++-11
+  - CXX=g++-9
 
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-11
+      - g++-9
