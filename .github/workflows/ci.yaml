@@ -16,6 +16,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      # Downgrade npm
+      - run: |
+          npm install -g npm@latest-6
+
       # Install & test:
       - run: npm ci
       - run: npm test
