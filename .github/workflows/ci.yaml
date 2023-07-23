@@ -3,12 +3,19 @@ on: push
 jobs:
   build:
     name: Build & test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [ 14.x, 16.x, 18.x ]
+        node-version: [ 14.x, 16.x, 18.x, 20.x ]
     steps:
       - uses: actions/checkout@v3
+
+      # Use GCC 9
+      - name: Set up GCC
+        uses: egor-tensin/setup-gcc@v1
+        with:
+          version: 9
+          platform: x64
 
       # Install Node
       - name: Use Node.js ${{ matrix.node-version }}
