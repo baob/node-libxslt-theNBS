@@ -28,5 +28,6 @@ jobs:
           npm install -g npm@latest-6
 
       # Install & test:
+      - run: git submodule update --init
       - run: npm ci
       - run: npm test
