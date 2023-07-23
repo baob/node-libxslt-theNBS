@@ -1,5 +1,7 @@
 name: CI
 on: push
+env:
+  CXX: g++-9
 jobs:
   build:
     name: Build & test
@@ -24,10 +26,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       # Downgrade npm
-      - run: |
-          npm install -g npm@latest-6
+      - run: npm install -g npm@latest-6
 
       # Install & test:
       - run: git submodule update --init
-      - run: npm ci
+      - run: npm install
       - run: npm test
