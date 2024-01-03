@@ -27,15 +27,18 @@
     "url": "https://github.com/alexdee2007/node-libxslt.git"
   },
   "license": "MIT",
+  "resolutions": {
+    "nan": "github:jkleinsc/nan#remove_accessor_signature"
+  },
   "dependencies": {
     "bindings": "^1.5.0",
-    "libxmljs2": "^0.26.6",
-    "nan": "^2.14.2"
+    "libxmljs2": "^0.33.0"
   },
   "devDependencies": {
     "async": "^3.2.0",
     "jsdoc-to-markdown": "^5.0.3",
     "mocha": "^7.1.1",
+    "node-gyp": "~8.3.0",
     "should": "^13.2.3"
   }
 }
