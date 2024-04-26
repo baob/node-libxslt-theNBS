@@ -29,7 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "bindings": "^1.5.0",
-    "libxmljs2": "^0.33.0"
+    "libxmljs2": "git+https://github.com/marudor/libxmljs2.git#v0.33.0"
   },
   "devDependencies": {
     "async": "^3.2.0",
